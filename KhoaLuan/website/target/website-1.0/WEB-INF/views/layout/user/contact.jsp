@@ -36,7 +36,7 @@
                             </span>
                         </p>
                         <p class="text-align-center">
-                            <a class="btn-tertiary" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="754a9891-20ac-48a2-a120-b75cd27ded98" href="/vi/email-us">Điền vào mẫu email</a>
+                            <a class="btn-tertiary" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="754a9891-20ac-48a2-a120-b75cd27ded98" href="mailto:cumy1999@gmail.com">Gửi email</a>
                         </p>
                     </div>
                 </div>

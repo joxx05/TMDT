@@ -2,10 +2,10 @@
 -- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 28, 2023 lúc 04:02 AM
--- Phiên bản máy phục vụ: 10.1.38-MariaDB
--- Phiên bản PHP: 5.6.40
+-- Host: 127.0.0.1
+-- Generation Time: May 19, 2024 at 12:17 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 5.6.40
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `tmdt`
+-- Database: `tmdt`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `bill`
+-- Table structure for table `bill`
 --
 
 CREATE TABLE `bill` (
@@ -37,20 +37,22 @@ CREATE TABLE `bill` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `bill`
+-- Dumping data for table `bill`
 --
 
 INSERT INTO `bill` (`id`, `id_user`, `code_pay`, `is_pay`, `date`) VALUES
-(8, 3, '231024_2a9efc63-dc2e-4784-9c39-0c4e65792411', 1, '2023-10-24 13:19:53'),
-(9, 3, '231024_58da2fea-3e8a-4667-9b61-68ebf983fb2f', 1, '2023-10-24 13:21:38'),
-(10, 7, '231115_a89ca4b4-ec12-47fa-97a1-821f22714e6b', 1, '2023-11-15 07:05:35'),
-(11, 7, '231115_714ee8d7-8383-4c4e-be8c-82b04c2298fd', 1, '2023-11-15 07:12:21'),
-(12, 5, '231116_cb7ad7fd-5974-4580-b514-e84164995638', 1, '2023-11-16 08:49:04');
+(1, 3, '231011_b06cdda7-20b5-457f-90b3-91b69300d193', 1, '2023-10-11 10:18:10'),
+(2, 3, '231011_f6457578-a5b4-4545-b54c-2c812deb01b9', 1, '2023-10-10 14:53:44'),
+(3, 3, '231015_3c32009c-5e77-44ec-8efc-46292c7b80fb', 1, '2023-10-11 10:24:28'),
+(7, 3, '231013_b86e24dc-fa32-466d-8b9a-a2b5ba4816ce', 1, '2023-10-13 15:16:13'),
+(8, 5, '240417_49a9f656-258d-4024-acd8-43b18ffdbb02', 1, '2024-04-16 18:40:29'),
+(9, 5, '240417_652d4446-df2c-4d62-9957-4f03ce369bff', 1, '2024-04-17 12:59:23'),
+(10, 5, '240507_834c74b9-b276-429a-9a02-9d9d9b523195', 1, '2024-04-20 21:51:12');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `bill_type`
+-- Table structure for table `bill_type`
 --
 
 CREATE TABLE `bill_type` (
@@ -62,26 +64,33 @@ CREATE TABLE `bill_type` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `bill_type`
+-- Dumping data for table `bill_type`
 --
 
 INSERT INTO `bill_type` (`id`, `id_bill`, `id_type`, `soluong`, `isreview`) VALUES
-(11, 8, 69, 2, 0),
-(12, 8, 60, 1, 0),
-(13, 9, 49, 1, 0),
-(14, 9, 68, 1, 0),
-(15, 9, 57, 1, 0),
-(16, 9, 61, 1, 0),
-(17, 10, 61, 1, 0),
-(18, 11, 57, 1, 1),
-(19, 11, 50, 2, 1),
-(20, 12, 66, 1, 0),
-(21, 12, 49, 1, 0);
+(1, 1, 48, 1, 1),
+(2, 1, 39, 2, 1),
+(3, 1, 37, 2, 0),
+(4, 2, 39, 2, 0),
+(5, 2, 48, 2, 0),
+(6, 2, 37, 2, 0),
+(7, 3, 48, 1, 0),
+(8, 3, 37, 1, 0),
+(9, 7, 7, 3, 1),
+(10, 7, 48, 1, 0),
+(11, 8, 60, 1, 1),
+(12, 9, 61, 1, 1),
+(13, 9, 69, 1, 1),
+(14, 9, 54, 1, 1),
+(15, 9, 63, 1, 1),
+(16, 9, 49, 1, 1),
+(17, 10, 49, 1, 0),
+(18, 10, 57, 1, 0);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `cart`
+-- Table structure for table `cart`
 --
 
 CREATE TABLE `cart` (
@@ -90,20 +99,19 @@ CREATE TABLE `cart` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `cart`
+-- Dumping data for table `cart`
 --
 
 INSERT INTO `cart` (`id`, `ghichu`) VALUES
 (8, NULL),
 (9, NULL),
 (10, NULL),
-(11, NULL),
-(12, NULL);
+(11, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `cart_type`
+-- Table structure for table `cart_type`
 --
 
 CREATE TABLE `cart_type` (
@@ -114,10 +122,19 @@ CREATE TABLE `cart_type` (
   `date_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `cart_type`
+--
+
+INSERT INTO `cart_type` (`id`, `id_cart`, `id_type`, `soluong`, `date_update`) VALUES
+(1, 8, 45, 1, '2023-10-14 07:49:07'),
+(2, 8, 37, 3, '2023-10-13 17:00:00'),
+(3, 8, 41, 4, '2023-10-13 17:00:00');
+
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `img_product`
+-- Table structure for table `img_product`
 --
 
 CREATE TABLE `img_product` (
@@ -128,7 +145,7 @@ CREATE TABLE `img_product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `img_product`
+-- Dumping data for table `img_product`
 --
 
 INSERT INTO `img_product` (`id`, `id_product`, `img`, `date_create`) VALUES
@@ -154,7 +171,7 @@ INSERT INTO `img_product` (`id`, `id_product`, `img`, `date_create`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `img_review`
+-- Table structure for table `img_review`
 --
 
 CREATE TABLE `img_review` (
@@ -165,7 +182,7 @@ CREATE TABLE `img_review` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `img_review`
+-- Dumping data for table `img_review`
 --
 
 INSERT INTO `img_review` (`id`, `id_review`, `img`, `date_create`) VALUES
@@ -174,13 +191,20 @@ INSERT INTO `img_review` (`id`, `id_review`, `img`, `date_create`) VALUES
 (5, 2, '1697035651126.jpg', '2023-10-11 14:47:31'),
 (6, 3, '1697035829400.jpg', '2023-10-11 14:50:29'),
 (7, 4, '1697211067162.jpg', '2023-10-13 15:31:07'),
-(8, 5, '1700032464092.jpg', '2023-11-15 07:14:24'),
-(9, 6, '1700032511678.jpg', '2023-11-15 07:15:12');
+(8, 5, '1713308302568.jpg', '2024-04-16 22:58:22'),
+(9, 6, '1713308417362.jpg', '2024-04-16 23:00:17'),
+(10, 7, '1713309024143.jpg', '2024-04-16 23:10:24'),
+(11, 8, '1713311126364.jpg', '2024-04-16 23:45:26'),
+(12, 9, '1713359822179.jpg', '2024-04-17 13:17:02'),
+(13, 10, '1714808378091.jpg', '2024-05-04 07:39:38'),
+(14, 11, '1714999921055.jpg', '2024-05-06 12:52:01'),
+(15, 12, '1715069700402.jpg', '2024-05-07 08:15:00'),
+(16, 13, '1715069907894.jpg', '2024-05-07 08:18:27');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `message`
+-- Table structure for table `message`
 --
 
 CREATE TABLE `message` (
@@ -192,7 +216,7 @@ CREATE TABLE `message` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `message`
+-- Dumping data for table `message`
 --
 
 INSERT INTO `message` (`id`, `incoming`, `outcoming`, `content`, `is_load`) VALUES
@@ -217,10 +241,10 @@ INSERT INTO `message` (`id`, `incoming`, `outcoming`, `content`, `is_load`) VALU
 (22, 3, 4, 'b\n', 1),
 (23, 4, 3, 'd\n', 1),
 (24, 4, 3, 'shop oi\n', 1),
-(25, 3, 4, 'sao em\n', 1),
-(26, 4, 3, 'a\n', 1),
-(27, 3, 4, 'ok\n', 1),
-(28, 4, 3, 'sao ko thay\n', 1),
+(25, 3, 5, 'sao em\n', 1),
+(26, 5, 3, 'a\n', 1),
+(27, 3, 5, 'ok\n', 1),
+(28, 5, 3, 'sao ko thay\n', 1),
 (29, 3, 4, 'o kia\n', 1),
 (30, 4, 3, 'ban oi\n', 1),
 (31, 4, 3, 'alo\n', 1),
@@ -250,14 +274,23 @@ INSERT INTO `message` (`id`, `incoming`, `outcoming`, `content`, `is_load`) VALU
 (55, 4, 3, 'ha\n', 1),
 (56, 3, 4, '123\n', 1),
 (57, 4, 3, '321\n', 1),
-(58, 5, 3, 'alo\n', 1),
-(59, 5, 3, 'bạn ơi\n', 1),
-(60, 3, 5, 'nghe bạn\n', 1);
+(58, 5, 3, 'đasadasads', 1),
+(59, 5, 3, 'fafas', 1),
+(60, 5, 3, 'ádasdasd', 1),
+(61, 3, 5, 'dasadasdads', 1),
+(62, 5, 3, 'áddasdasasd', 1),
+(63, 3, 5, 'dâsdasd', 1),
+(64, 5, 3, 'ádasđá', 1),
+(65, 5, 3, 'ádasdsad', 1),
+(66, 3, 5, 'hdfhdfg', 1),
+(67, 5, 3, 'dâsdasdasd', 0),
+(68, 5, 3, 'ấgdfgdfgdh', 0),
+(69, 3, 5, 'ok im fine', 0);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `product`
+-- Table structure for table `product`
 --
 
 CREATE TABLE `product` (
@@ -273,25 +306,25 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `product`
+-- Dumping data for table `product`
 --
 
 INSERT INTO `product` (`id`, `id_store`, `ten`, `mota`, `ghichu`, `soluong`, `view`, `rating`, `status`) VALUES
-(20, 1, 'Ngói sóng SCG Thái Lan', 'Ngói màu SCG (hay còn gọi là Cpac monier) thuộc tập đoàn hoàng gia SCG Thái Lan. Đây là một thương hiệu hàng đầu về vật liệu xây dựng, ngành xi măng và hóa chất ở Thái Lan có sức ảnh hưởng lớn đến nhiều quốc gia trên thế giới. Các sản phẩm quen thuộc của tâp đoàn như thiết bị vệ sinh COTTO, vật liệu xi măng giả gỗ Smartwood, Smartboard,…', '2-2-2-2', 10, 1, 5, 1),
-(21, 1, 'SƠN LÓT NGOẠI THẤT TOA 4 SEASONS SEALER', 'Sơn lót ngoại thất TOA 4 Seasons Sealer được sản xuất từ nhựa Styrene Acrylic. Sơn lót ngoại thất TOA 4 Seasons SealerVới khả năng thấm sâu vào bề mặt, sản phẩm tạo ra một lớp màng sơn độ bám dính cao, kháng kiềm, kháng nước và chống loang muối hiệu quả.', '2-2-2', 20, 9, 4, 1),
-(23, 1, 'Thanh SmartWood hàng rào 7,5x400x1,6cm', 'Thanh hàng Rào & Cổng SCG SmartWood là giải pháp cho bạn khi có thể đáp ứng tất cả các yêu cầu của thiết kế như khả năng chịu nước, chống mối mọt, dễ thi công, độ bền cao', '', 200, 2, 4.333333333333333, 1),
-(25, 1, 'Tấm ốp tường 3D BY-1602', 'Tấm ốp tường', '', 500, 2, 0, 1),
-(26, 2, 'Áo Sơ Mi Nam Tay Dài Flannel', 'Chất vải cotton cào bông 2 mặt, vải có độ mềm mịn và tạo được cảm giác thoáng mát', '', 20, 3, 0, 1),
-(27, 2, 'Áo Thun Nam Tay Ngắn Cổ Tròn Carbon', 'Áo rộng thoáng mát cho mùa hè', '', 54, 0, 0, 1),
-(28, 2, 'Quần Vải Nam Texture Trơn Form Slim', 'là một item quần vải basic, màu sắc trung tính dễ phối mang phong thanh lịch, hiện đại. Form quần vừa vặn với cơ thể, phần đùi và mông thoải mái và ôm dần xuống dưới nhưng không quá sát. ', '', 28, 1, 0, 1),
-(29, 2, 'Dây Nịt Nam Có Khóa Xoay Trơn Basic', 'Dây nịt da thật', '', 100, 1, 0, 1),
-(30, 2, 'Dây Nịt Nam Lưng Trơn Freesize ', 'là item không thể thiếu trong tủ quần áo mà còn là một bảo bối giúp hoàn thiện outfit thời trang của cánh mày râu. Được thiết kế đơn giản theo kiểu dáng khóa kim thanh lịch, nhẹ nhàng. Kết hợp với chất liệu da thuộc mềm và dẻo tạo cảm giác dễ chịu khi sử dụng. ', '', 40, 5, 5, 1),
-(31, 3, 'Áo sơ mi dài tay Aristino ALS12602', 'Áo sơ mi dài tay phom Regular Fit có độ suông vừa phải nhưng vẫn đảm bảo vừa vặn hình thể người mặc.', '', 15, 9, 0, 1);
+(20, 1, 'Ngói sóng SCG Thái Lan', 'Ngói màu SCG (hay còn gọi là Cpac monier) thuộc tập đoàn hoàng gia SCG Thái Lan. Đây là một thương hiệu hàng đầu về vật liệu xây dựng, ngành xi măng và hóa chất ở Thái Lan có sức ảnh hưởng lớn đến nhiều quốc gia trên thế giới. Các sản phẩm quen thuộc của tâp đoàn như thiết bị vệ sinh COTTO, vật liệu xi măng giả gỗ Smartwood, Smartboard,…', '2-2-2-2', 10, 0, 0, 0),
+(21, 1, 'SƠN LÓT NGOẠI THẤT TOA 4 SEASONS SEALER', 'Sơn lót ngoại thất TOA 4 Seasons Sealer được sản xuất từ nhựa Styrene Acrylic. Sơn lót ngoại thất TOA 4 Seasons SealerVới khả năng thấm sâu vào bề mặt, sản phẩm tạo ra một lớp màng sơn độ bám dính cao, kháng kiềm, kháng nước và chống loang muối hiệu quả.', '2-2-2', 20, 7, 4, 0),
+(23, 1, 'Thanh SmartWood hàng rào 7,5x400x1,6cm', 'Thanh hàng Rào & Cổng SCG SmartWood là giải pháp cho bạn khi có thể đáp ứng tất cả các yêu cầu của thiết kế như khả năng chịu nước, chống mối mọt, dễ thi công, độ bền cao', '', 200, 1, 4, 0),
+(25, 1, 'Tấm ốp tường 3D BY-1602', 'Tấm ốp tường', '', 500, 0, 0, 0),
+(26, 2, 'Áo Sơ Mi Nam Tay Dài Flannel', 'Chất vải cotton cào bông 2 mặt, vải có độ mềm mịn và tạo được cảm giác thoáng mát', '', 20, 4, 1, 0),
+(27, 2, 'Áo Thun Nam Tay Ngắn Cổ Tròn Carbon', 'Áo rộng thoáng mát cho mùa hè', '', 54, 17, 0, 0),
+(28, 2, 'Quần Vải Nam Texture Trơn Form Slim', 'là một item quần vải basic, màu sắc trung tính dễ phối mang phong thanh lịch, hiện đại. Form quần vừa vặn với cơ thể, phần đùi và mông thoải mái và ôm dần xuống dưới nhưng không quá sát. ', '', 28, 4, 1, 0),
+(29, 2, 'Dây Nịt Nam Có Khóa Xoay Trơn Basic', 'Dây nịt da thật', '', 100, 12, 1, 0),
+(30, 2, 'Dây Nịt Nam Lưng Trơn Freesize ', 'là item không thể thiếu trong tủ quần áo mà còn là một bảo bối giúp hoàn thiện outfit thời trang của cánh mày râu. Được thiết kế đơn giản theo kiểu dáng khóa kim thanh lịch, nhẹ nhàng. Kết hợp với chất liệu da thuộc mềm và dẻo tạo cảm giác dễ chịu khi sử dụng. ', '', 40, 3, 5, 0),
+(31, 3, 'Áo sơ mi dài tay Aristino ALS12602', 'Áo sơ mi dài tay phom Regular Fit có độ suông vừa phải nhưng vẫn đảm bảo vừa vặn hình thể người mặc.', '', 15, 7, 5, 1);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `product_tag`
+-- Table structure for table `product_tag`
 --
 
 CREATE TABLE `product_tag` (
@@ -301,7 +334,7 @@ CREATE TABLE `product_tag` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `product_tag`
+-- Dumping data for table `product_tag`
 --
 
 INSERT INTO `product_tag` (`id`, `id_tag`, `id_product`) VALUES
@@ -368,7 +401,7 @@ INSERT INTO `product_tag` (`id`, `id_tag`, `id_product`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `promotion`
+-- Table structure for table `promotion`
 --
 
 CREATE TABLE `promotion` (
@@ -384,7 +417,7 @@ CREATE TABLE `promotion` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `pro_bill`
+-- Table structure for table `pro_bill`
 --
 
 CREATE TABLE `pro_bill` (
@@ -396,7 +429,7 @@ CREATE TABLE `pro_bill` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `pro_product`
+-- Table structure for table `pro_product`
 --
 
 CREATE TABLE `pro_product` (
@@ -408,7 +441,7 @@ CREATE TABLE `pro_product` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `review`
+-- Table structure for table `review`
 --
 
 CREATE TABLE `review` (
@@ -417,25 +450,32 @@ CREATE TABLE `review` (
   `id_product` int(11) NOT NULL,
   `comment` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
   `rate` int(5) NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `spam_rate` double NOT NULL DEFAULT '0',
+  `status` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `review`
+-- Dumping data for table `review`
 --
 
-INSERT INTO `review` (`id`, `id_user`, `id_product`, `comment`, `rate`, `date`) VALUES
-(1, 3, 23, 'Sản phẩm tốt!', 4, '2023-10-06 09:01:31'),
-(2, 3, 23, 'Tốt!', 4, '2023-10-11 14:47:31'),
-(3, 3, 30, 'Da tốt, giá rẻ!', 5, '2023-10-11 14:50:29'),
-(4, 3, 20, 'Sản phẩm rất vừa ý tôi!', 5, '2023-10-13 15:31:07'),
-(5, 7, 23, 'Sản phẩm tốt', 5, '2023-11-15 07:14:24'),
-(6, 7, 21, 'Sơn tốt giá rẻ sẻ ủng hộ tiếp!', 4, '2023-11-15 07:15:11');
+INSERT INTO `review` (`id`, `id_user`, `id_product`, `comment`, `rate`, `date`, `spam_rate`, `status`) VALUES
+(1, 3, 23, 'Sản phẩm tốt!', 4, '2023-10-06 09:01:31', 0, 1),
+(2, 3, 23, 'Tốt!', 4, '2023-10-11 14:47:31', 0, 1),
+(3, 3, 30, 'Da tốt, giá rẻ!', 5, '2023-10-11 14:50:29', 0, 1),
+(4, 3, 20, 'Sản phẩm rất vừa ý tôi!', 5, '2024-05-10 19:14:10', 23.56, 1),
+(5, 5, 29, 'Đã nhận được hàng, giao hàng nhamh, đã mua lần 2 , rẻ đáng đồng tiền', 1, '2024-05-10 19:13:58', 19.84, 1),
+(8, 5, 29, 'Đóng hàng quá cẩu thả, sơ sài, hàng bị bóp méo, xộc xệch, nhiều thứ hàng mà ko có cái hộp mà đóng.quá thất vọng khi nhìn đùm hàng', 1, '2024-05-10 19:13:49', 13.16, 1),
+(9, 5, 28, 'Shop chuẩn bị đầy đủ. Đóng gói cũng ok. Nhưng gửi buộc tóc mà mấy màu này khó dùng quá.', 1, '2024-05-10 19:13:26', 20.34, 1),
+(10, 5, 26, 'Đóng gói và giao hàng nhanh. Shipper thân thiện! Hàng ngon,rẻ! Có dịp quay lại ủng hộ shop sau nhé!', 1, '2024-05-10 19:13:36', 3.27, 1),
+(11, 5, 25, 'Giao hàng nhanh\r\nShipper thân thiện giao hàng nhanh\r\nKhá là ưng ý về màu son ạ \r\nNên thử mua nhé \r\nMình săn đc 0đ nên không có gì để chê ạ', 4, '2024-05-10 19:13:17', 18.8, 1),
+(12, 5, 21, 'asd dasdasda dasdasd sdasd asdasd dád', 4, '2024-05-07 08:15:00', 99.4, 0),
+(13, 5, 31, 'Sản phẩm tốt rất thích hợp để mặc những ngày nóng, quá tuyệt vời, nên mua!', 5, '2024-05-07 08:18:27', 45.54, 0);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `role`
+-- Table structure for table `role`
 --
 
 CREATE TABLE `role` (
@@ -446,7 +486,7 @@ CREATE TABLE `role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `role`
+-- Dumping data for table `role`
 --
 
 INSERT INTO `role` (`id`, `ten`, `mota`, `ghichu`) VALUES
@@ -456,7 +496,7 @@ INSERT INTO `role` (`id`, `ten`, `mota`, `ghichu`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `store`
+-- Table structure for table `store`
 --
 
 CREATE TABLE `store` (
@@ -468,22 +508,23 @@ CREATE TABLE `store` (
   `address` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
   `date_create` datetime NOT NULL,
   `ghichu` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT '1'
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `conf_spam_rate` double NOT NULL DEFAULT '30'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `store`
+-- Dumping data for table `store`
 --
 
-INSERT INTO `store` (`id`, `id_user`, `ten`, `mota`, `phone`, `address`, `date_create`, `ghichu`, `status`) VALUES
-(1, 3, 'Vật liệu xây dựng', 'Shop chuyên mua bán sĩ lẻ vật liệu xây dựng', '0774926640', '114/105a phường bình hưng hòa quận bình tân', '2023-10-01 08:55:33', '', 1),
-(2, 3, 'Cửa hàng bán quần áo', 'Chuyên bán những bộ quần áo thời trang đẹp đẽ', '0774926640', '114/105a phường bình hưng hòa quận bình tân', '2023-10-04 22:43:32', '', 1),
-(3, 4, 'LazyLut', 'Chuyên bán những bộ quần áo thời trang đẹp đẽ nhưng giá lại rẻ heee', '0774926640', '114/105a phường bình hưng hòa quận bình tân', '2023-10-18 18:35:00', 'myshop', 1);
+INSERT INTO `store` (`id`, `id_user`, `ten`, `mota`, `phone`, `address`, `date_create`, `ghichu`, `status`, `conf_spam_rate`) VALUES
+(1, 3, 'Vật liệu xây dựng', 'Shop chuyên mua bán sĩ lẻ vật liệu xây dựng', '0774926640', '114/105a phường bình hưng hòa quận bình tân', '2023-10-01 08:55:33', '', 1, 30),
+(2, 3, 'Cửa hàng bán quần áo', 'Chuyên bán những bộ quần áo thời trang đẹp đẽ', '0774926640', '114/105a phường bình hưng hòa quận bình tân', '2023-10-04 22:43:32', '', 1, 70),
+(3, 4, 'LazyLut', 'Chuyên bán những bộ quần áo thời trang đẹp đẽ nhưng giá lại rẻ heee', '0774926640', '114/105a phường bình hưng hòa quận bình tân', '2023-10-18 18:35:00', 'myshop', 1, 30);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tag`
+-- Table structure for table `tag`
 --
 
 CREATE TABLE `tag` (
@@ -493,7 +534,7 @@ CREATE TABLE `tag` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tag`
+-- Dumping data for table `tag`
 --
 
 INSERT INTO `tag` (`id`, `ten`, `ghichu`) VALUES
@@ -521,7 +562,7 @@ INSERT INTO `tag` (`id`, `ten`, `ghichu`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `test`
+-- Table structure for table `test`
 --
 
 CREATE TABLE `test` (
@@ -531,7 +572,7 @@ CREATE TABLE `test` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `test`
+-- Dumping data for table `test`
 --
 
 INSERT INTO `test` (`id`, `ten`, `ghichu`) VALUES
@@ -540,7 +581,7 @@ INSERT INTO `test` (`id`, `ten`, `ghichu`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `type`
+-- Table structure for table `type`
 --
 
 CREATE TABLE `type` (
@@ -553,7 +594,7 @@ CREATE TABLE `type` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `type`
+-- Dumping data for table `type`
 --
 
 INSERT INTO `type` (`id`, `id_product`, `ten`, `mota`, `price`, `ghichu`) VALUES
@@ -580,7 +621,7 @@ INSERT INTO `type` (`id`, `id_product`, `ten`, `mota`, `price`, `ghichu`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -601,20 +642,19 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `ten`, `ho`, `phone`, `email`, `address`, `image`, `gioithieu`, `date_create`, `date_update`, `id_cart`, `ghichu`, `password`, `status`) VALUES
 (3, 'admin', 'admin', 'admin', 'admin@gmail.com', 'admin', '1697629470428.jpg', 'admin', '2023-09-06 16:05:53', '2023-09-06 09:05:53', 8, 'admin', '$2a$10$fmMtJ6v8fDtSklzbbuVtw.oQQOTDXs4inOULiinziX60ogzG1Xrga', 1),
 (4, 'nguyên', 'hồ đắc', '0774926640', 'test1@gmail.com', '114/105a phường bình hưng hòa quận bình tân', '1697629431851.jpg', 'nguyên đẹp trai cực', '2023-10-11 14:34:12', '2023-10-11 07:34:12', 9, '123456', '$2a$10$9lf.qEn2/zHJXL/91xOhduIWmwO.jbIsUANX1w5J2z3UyEuRBO7S6', 1),
 (5, 'Nam', 'Hồ', '0774926641', 'cumy1999@gmail.com', 'Hồ Chí Minh', '1697203376712.jpg', 'Nam là bạn của tôi.........', '2023-10-13 20:22:56', '2023-10-13 13:22:56', 10, '123456', '$2a$10$Sjly4LldwDzSvmrGKY3TKuqLsMqhTDzIkkVUnH6Akm5CZmju5u2xO', 1),
-(6, 'nguyên', 'hồ', '0774926666', 'hodacnguyen1999@gmail.com', 'Hồ Chí Minh', '1698077994539.jpg', 'admin', '2023-10-23 23:19:54', '2023-10-23 16:19:54', 11, '', '$2a$10$9pQNdLbeTlVeMus0eOKCKO6hQhMour4XHqCWcx/R0qrUsVmqRnfoe', 1),
-(7, 'Nguyên', 'Hồ', '0774926666', 'cumy1998@gmail.com', 'Hồ Chí Minh', '1700031745909.jpg', 'là thành viên của TMDT', '2023-11-15 14:02:26', '2023-11-15 07:02:26', 12, '', '$2a$10$AOpd3OuyHRazi.7Drrkm9OUXIWilG5jf0kiVeos4cTyJV/UBy1BpW', 1);
+(6, 'nguyên', 'hồ', '0774926666', 'hodacnguyen1999@gmail.com', 'Hồ Chí Minh', '1698077994539.jpg', 'admin', '2023-10-23 23:19:54', '2023-10-23 16:19:54', 11, '', '$2a$10$94qrOCqGz1ROxbLsvh445udLMB4fLUUUwOmpMkZHTR8.XHucmzPDq', 1);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `user_role`
+-- Table structure for table `user_role`
 --
 
 CREATE TABLE `user_role` (
@@ -625,7 +665,7 @@ CREATE TABLE `user_role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `user_role`
+-- Dumping data for table `user_role`
 --
 
 INSERT INTO `user_role` (`id`, `id_user`, `id_role`, `date_update`) VALUES
@@ -633,252 +673,251 @@ INSERT INTO `user_role` (`id`, `id_user`, `id_role`, `date_update`) VALUES
 (15, 5, 2, '2023-10-13 13:22:56'),
 (18, 3, 1, '2023-10-16 16:13:08'),
 (20, 4, 2, '2023-10-16 16:13:30'),
-(21, 6, 2, '2023-10-23 16:19:54'),
-(22, 7, 2, '2023-11-15 07:02:26');
+(21, 6, 2, '2023-10-23 16:19:54');
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `bill`
+-- Indexes for table `bill`
 --
 ALTER TABLE `bill`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `bill_type`
+-- Indexes for table `bill_type`
 --
 ALTER TABLE `bill_type`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `cart`
+-- Indexes for table `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `cart_type`
+-- Indexes for table `cart_type`
 --
 ALTER TABLE `cart_type`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `img_product`
+-- Indexes for table `img_product`
 --
 ALTER TABLE `img_product`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `img_review`
+-- Indexes for table `img_review`
 --
 ALTER TABLE `img_review`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `message`
+-- Indexes for table `message`
 --
 ALTER TABLE `message`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `product`
+-- Indexes for table `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id`),
   ADD KEY `product_store` (`id_store`);
 
 --
--- Chỉ mục cho bảng `product_tag`
+-- Indexes for table `product_tag`
 --
 ALTER TABLE `product_tag`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `promotion`
+-- Indexes for table `promotion`
 --
 ALTER TABLE `promotion`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `pro_bill`
+-- Indexes for table `pro_bill`
 --
 ALTER TABLE `pro_bill`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `pro_product`
+-- Indexes for table `pro_product`
 --
 ALTER TABLE `pro_product`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `review`
+-- Indexes for table `review`
 --
 ALTER TABLE `review`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `role`
+-- Indexes for table `role`
 --
 ALTER TABLE `role`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `store`
+-- Indexes for table `store`
 --
 ALTER TABLE `store`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `tag`
+-- Indexes for table `tag`
 --
 ALTER TABLE `tag`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `type`
+-- Indexes for table `type`
 --
 ALTER TABLE `type`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `user_role`
+-- Indexes for table `user_role`
 --
 ALTER TABLE `user_role`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `bill`
+-- AUTO_INCREMENT for table `bill`
 --
 ALTER TABLE `bill`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT cho bảng `bill_type`
+-- AUTO_INCREMENT for table `bill_type`
 --
 ALTER TABLE `bill_type`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT cho bảng `cart`
+-- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT cho bảng `cart_type`
+-- AUTO_INCREMENT for table `cart_type`
 --
 ALTER TABLE `cart_type`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT cho bảng `img_product`
+-- AUTO_INCREMENT for table `img_product`
 --
 ALTER TABLE `img_product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
 
 --
--- AUTO_INCREMENT cho bảng `img_review`
+-- AUTO_INCREMENT for table `img_review`
 --
 ALTER TABLE `img_review`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT cho bảng `message`
+-- AUTO_INCREMENT for table `message`
 --
 ALTER TABLE `message`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
--- AUTO_INCREMENT cho bảng `product`
+-- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
--- AUTO_INCREMENT cho bảng `product_tag`
+-- AUTO_INCREMENT for table `product_tag`
 --
 ALTER TABLE `product_tag`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
 
 --
--- AUTO_INCREMENT cho bảng `promotion`
+-- AUTO_INCREMENT for table `promotion`
 --
 ALTER TABLE `promotion`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `pro_bill`
+-- AUTO_INCREMENT for table `pro_bill`
 --
 ALTER TABLE `pro_bill`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `pro_product`
+-- AUTO_INCREMENT for table `pro_product`
 --
 ALTER TABLE `pro_product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `review`
+-- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT cho bảng `role`
+-- AUTO_INCREMENT for table `role`
 --
 ALTER TABLE `role`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT cho bảng `store`
+-- AUTO_INCREMENT for table `store`
 --
 ALTER TABLE `store`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT cho bảng `tag`
+-- AUTO_INCREMENT for table `tag`
 --
 ALTER TABLE `tag`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
--- AUTO_INCREMENT cho bảng `type`
+-- AUTO_INCREMENT for table `type`
 --
 ALTER TABLE `type`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
--- AUTO_INCREMENT cho bảng `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT cho bảng `user_role`
+-- AUTO_INCREMENT for table `user_role`
 --
 ALTER TABLE `user_role`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `product`
+-- Constraints for table `product`
 --
 ALTER TABLE `product`
   ADD CONSTRAINT `product_store` FOREIGN KEY (`id_store`) REFERENCES `store` (`id`);
