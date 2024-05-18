@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+
+
+<!DOCTYPE tiles-definitions PUBLIC "-//ApacheSoftware Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <definition name="baseLayout" template="/WEB-INF/views/index.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="mess" value="/WEB-INF/views/layout/static/mess.jsp" />
+        <put-attribute name="header" value="/WEB-INF/views/layout/static/header.jsp" />
+        <put-attribute name="content" value="" />
+        <put-attribute name="footer" value="/WEB-INF/views/layout/static/footer.jsp" />
+    </definition>
+    <definition name="testlive" template="/WEB-INF/views/layout/user/testlive.jsp">
+    </definition>
+    <definition name="viewlive" template="/WEB-INF/views/layout/user/viewlive.jsp">
+    </definition>
+    <definition name="home" extends="baseLayout">
+        <put-attribute name="title" value="Home" />
+        <put-attribute name="content" value="/WEB-INF/views/layout/user/home.jsp" />
+    </definition>
+    <definition name="contact" extends="baseLayout">
+        <put-attribute name="title" value="Contact" />
+        <put-attribute name="content" value="/WEB-INF/views/layout/user/contact.jsp" />
+    </definition>
+    <definition name="createshop" extends="baseLayout">
+        <put-attribute name="title" value="Home" />
+        <put-attribute name="content" value="/WEB-INF/views/layout/user/createshop.jsp" />
+    </definition>
+    <definition name="detailshop" extends="baseLayout">
+        <put-attribute name="title" value="Detail Shop" />
+        <put-attribute name="content" value="/WEB-INF/views/layout/user/detailshop.jsp" />
+    </definition>
+    <definition name="statisproduct" extends="baseLayout">
+        <put-attribute name="title" value="Statis" />
+        <put-attribute name="content" value="/WEB-INF/views/layout/user/statisproduct.jsp" />
+    </definition>
+    <definition name="quanlybinhluanshop" extends="baseLayout">
+        <put-attribute name="title" value="Statis" />
+        <put-attribute name="content" value="/WEB-INF/views/layout/user/quanlybinhluanshop.jsp" />
+    </definition>
+    <definition name="statistype" extends="baseLayout">
+        <put-attribute name="title" value="Statis" />
+        <put-attribute name="content" value="/WEB-INF/views/layout/user/statistype.jsp" />
+    </definition>
+    <definition name="login" extends="baseLayout">
+        <put-attribute name="title" value="Login" />
+        <put-attribute name="content" value="/WEB-INF/views/layout/user/login.jsp" />
+    </definition>
+    <definition name="resetpassword" extends="baseLayout">
+        <put-attribute name="title" value="Reset Password" />
+        <put-attribute name="content" value="/WEB-INF/views/layout/user/resetpass.jsp" />
+    </definition>
+    <definition name="resetpassword2" extends="baseLayout">
+        <put-attribute name="title" value="Reset Password" />
+        <put-attribute name="content" value="/WEB-INF/views/layout/user/resetpass2.jsp" />
+    </definition>
+    <definition name="resetpassword3" extends="baseLayout">
+        <put-attribute name="title" value="Reset Password" />
+        <put-attribute name="content" value="/WEB-INF/views/layout/user/resetpass3.jsp" />
+    </definition>
+    <definition name="myshop" extends="baseLayout">
+        <put-attribute name="title" value="My Shop" />
+        <put-attribute name="content" value="/WEB-INF/views/layout/user/myshop.jsp" />
+    </definition>
+    <definition name="products" extends="baseLayout">
+        <put-attribute name="title" value="Products" />
+        <put-attribute name="content" value="/WEB-INF/views/layout/user/products.jsp" />
+    </definition>
+    <definition name="product" extends="baseLayout">
+        <put-attribute name="title" value="Product detail" />
+        <put-attribute name="content" value="/WEB-INF/views/layout/user/product.jsp" />
+    </definition>
+    <definition name="register" extends="baseLayout">
+        <put-attribute name="title" value="Register" />
+        <put-attribute name="content" value="/WEB-INF/views/layout/user/register.jsp" />
+    </definition>
+    <definition name="addproduct" extends="baseLayout">
+        <put-attribute name="title" value="Add product" />
+        <put-attribute name="content" value="/WEB-INF/views/layout/user/addproduct.jsp" />
+    </definition>
+    <definition name="detailproduct" extends="baseLayout">
+        <put-attribute name="title" value="Detail product" />
+        <put-attribute name="content" value="/WEB-INF/views/layout/user/detailproduct.jsp" />
+    </definition>
+    <definition name="cart" extends="baseLayout">
+        <put-attribute name="title" value="Cart" />
+        <put-attribute name="content" value="/WEB-INF/views/layout/user/cart.jsp" />
+    </definition>
+    <definition name="tag" extends="baseLayout">
+        <put-attribute name="title" value="Tag" />
+        <put-attribute name="content" value="/WEB-INF/views/layout/user/tag.jsp" />
+    </definition>
+    <definition name="bill" extends="baseLayout">
+        <put-attribute name="title" value="Bill detail" />
+        <put-attribute name="content" value="/WEB-INF/views/layout/user/bill.jsp" />
+    </definition>
+    <definition name="bills" extends="baseLayout">
+        <put-attribute name="title" value="Bills" />
+        <put-attribute name="content" value="/WEB-INF/views/layout/user/bills.jsp" />
+    </definition>
+    <definition name="profile" extends="baseLayout">
+        <put-attribute name="title" value="Profile" />
+        <put-attribute name="content" value="/WEB-INF/views/layout/user/profile.jsp" />
+    </definition>
+    <definition name="editprofile" extends="baseLayout">
+        <put-attribute name="title" value="Edit Profile" />
+        <put-attribute name="content" value="/WEB-INF/views/layout/user/editprofile.jsp" />
+    </definition>
+    <definition name="review" extends="baseLayout">
+        <put-attribute name="title" value="Review" />
+        <put-attribute name="content" value="/WEB-INF/views/layout/user/review.jsp" />
+    </definition>
+    <definition name="quanlyuser" extends="baseLayout">
+        <put-attribute name="title" value="Admin" />
+        <put-attribute name="content" value="/WEB-INF/views/layout/admin/quanlyuser.jsp" />
+    </definition>
+    <definition name="quanlystore" extends="baseLayout">
+        <put-attribute name="title" value="Admin" />
+        <put-attribute name="content" value="/WEB-INF/views/layout/admin/quanlystore.jsp" />
+    </definition>
+    <definition name="quanlysanpham" extends="baseLayout">
+        <put-attribute name="title" value="Admin" />
+        <put-attribute name="content" value="/WEB-INF/views/layout/admin/quanlysanpham.jsp" />
+    </definition>
+    <definition name="adminstatisproduct" extends="baseLayout">
+        <put-attribute name="title" value="Admin" />
+        <put-attribute name="content" value="/WEB-INF/views/layout/admin/adminstatisproduct.jsp" />
+    </definition>
+    <definition name="quanlybinhluan" extends="baseLayout">
+        <put-attribute name="title" value="Admin" />
+        <put-attribute name="content" value="/WEB-INF/views/layout/admin/quanlybinhluan.jsp" />
+    </definition>
+    <definition name="adminstatistype" extends="baseLayout">
+        <put-attribute name="title" value="Admin" />
+        <put-attribute name="content" value="/WEB-INF/views/layout/admin/adminstatistype.jsp" />
+    </definition>
+</tiles-definitions>
+
