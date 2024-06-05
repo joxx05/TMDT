@@ -5,6 +5,7 @@
 package com.hodacnguyen.configs;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.hodacnguyen.util.LiveInfo;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -108,6 +109,11 @@ public class WebApplicationContextConfig implements WebMvcConfigurer {
 
     @Bean
     public Map<String, WebSocketSession> livestreamSessionsByUser() {
+        return new HashMap<>();
+    }
+
+    @Bean
+    public Map<String, LiveInfo> infoLivestream() {
         return new HashMap<>();
     }
 

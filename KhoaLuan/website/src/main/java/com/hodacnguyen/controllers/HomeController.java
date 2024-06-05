@@ -7,6 +7,7 @@ package com.hodacnguyen.controllers;
 import com.hodacnguyen.pojo.Product;
 import com.hodacnguyen.pojo.Tag;
 import com.hodacnguyen.service.ProductService;
+import com.hodacnguyen.util.LiveInfo;
 import java.io.IOException;
 import java.text.Normalizer;
 import java.util.HashMap;
@@ -19,9 +20,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.socket.WebSocketSession;
 
 @Controller
 public class HomeController {
+    @Autowired
+    private Map<String, LiveInfo> infoLivestream;
     @Autowired
     private ProductService productService;
     @RequestMapping("/")
@@ -34,6 +38,7 @@ public class HomeController {
                 tags.add(tag);
             }
         }
+        map.put("infoLivestream", infoLivestream);
         map.put("producttop", listProductTop);
         map.put("tags", tags);
         map.put("productnew", productService.list(0, 6, 1));

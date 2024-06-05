@@ -2,6 +2,7 @@ package com.hodacnguyen.configs;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.hodacnguyen.util.LiveInfo;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,11 +14,11 @@ import org.springframework.web.socket.WebSocketSession;
 
 import java.io.IOException;
 import java.net.URI;
+import java.net.URLDecoder;
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -30,9 +31,11 @@ public class LivestreamWebSocketHandler extends TextWebSocketHandler {
     @Autowired
     private ObjectMapper objectMapper;
     @Autowired
-    private Map<String, WebSocketSession> livestreamSessionsByUser = new ConcurrentHashMap<>();// chứa người muốn live
+    private Map<String, WebSocketSession> livestreamSessionsByUser;// chứa người muốn live
     @Autowired
-    private Map<String, List<WebSocketSession>> viewersByStream = new ConcurrentHashMap<>();//chứa người xem live
+    private Map<String, LiveInfo> infoLivestream;
+    @Autowired
+    private Map<String, List<WebSocketSession>> viewersByStream;//chứa người xem live
 
     @Override
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
@@ -42,11 +45,16 @@ public class LivestreamWebSocketHandler extends TextWebSocketHandler {
         logger.info("Contains islive attribute: " + isLive);
         if (isLive) {
             // Session này là của người live
-
+            String content = URLDecoder.decode(queryParams.get("content"), "UTF-8");
+            
             if (userId != null) {
                 if (!livestreamSessionsByUser.containsKey(userId)) {
                     logger.info("User connected: " + userId);
                     livestreamSessionsByUser.put(userId, session);
+                    if(!infoLivestream.containsKey(userId)){
+                        infoLivestream.put(userId, new LiveInfo(content));
+                        logger.info("Content live: " + content);
+                    }
                 } else {
                     logger.warn("User already has an active livestream session: " + userId);
                     session.close(CloseStatus.POLICY_VIOLATION.withReason("Only one active livestream session allowed per user"));
@@ -78,6 +86,7 @@ public class LivestreamWebSocketHandler extends TextWebSocketHandler {
         if (userId != null) {
             logger.info("User disconnected: " + userId);
             livestreamSessionsByUser.remove(userId);
+            infoLivestream.remove(userId);
             removeSessionFromAllStreams(session);
         } else {
             logger.warn("User disconnected without ID");
@@ -93,12 +102,12 @@ public class LivestreamWebSocketHandler extends TextWebSocketHandler {
             Message mess = objectMapper.readValue(payload, Message.class);
             String jsonOfferMessage = objectMapper.writeValueAsString(mess);
             if ("offer".equals(mess.getType())) {
-                WebSocketSession livesession=livestreamSessionsByUser.get(mess.getTo());
-                if(livesession != null){
+                WebSocketSession livesession = livestreamSessionsByUser.get(mess.getTo());
+                if (livesession != null) {
                     livesession.sendMessage(new TextMessage(jsonOfferMessage));
                 }
             } else if ("mess".equals(mess.getType())) {
-                
+
                 broadcastLivestreamData(mess.getTo(), jsonOfferMessage);
             }
 
@@ -111,7 +120,7 @@ public class LivestreamWebSocketHandler extends TextWebSocketHandler {
 
     private void broadcastLivestreamData(String streamId, String message) throws IOException {
         WebSocketSession session = livestreamSessionsByUser.get(streamId);
-        if(session!=null){
+        if (session != null) {
             session.sendMessage(new TextMessage(message));
         }
         List<WebSocketSession> viewers = viewersByStream.get(streamId);

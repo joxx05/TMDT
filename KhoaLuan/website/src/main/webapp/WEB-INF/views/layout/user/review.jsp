@@ -132,7 +132,7 @@
         } else {
             let v_predict = await predict(text, model);
             $('#spamRate').val(v_predict);
-            alert("Cảm ơn bạn vì đã đánh giá sản phẩm! ");
+            alert("Cảm ơn bạn vì đã đánh giá sản phẩm! "+v_predict);
             $('#form-review').submit();
         }
 

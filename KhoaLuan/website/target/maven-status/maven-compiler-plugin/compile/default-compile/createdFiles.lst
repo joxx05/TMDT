@@ -56,6 +56,7 @@ com\hodacnguyen\service\ReviewService.class
 com\hodacnguyen\repository\Impl\UserRepoImpl.class
 com\hodacnguyen\controllers\UserController.class
 com\hodacnguyen\configs\DispatcherServletInitializer.class
+com\hodacnguyen\util\LiveInfo.class
 com\hodacnguyen\controllers\HomeController.class
 com\hodacnguyen\service\Impl\BillServiceImpl.class
 com\hodacnguyen\controllers\api\ApiCartController.class

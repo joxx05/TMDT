@@ -38,6 +38,7 @@
                         <li><a href="${baseURL}/profile"><i class="fa fa-address-card-o" aria-hidden="true"></i> Info</a></li>
                         <li><a href="${baseURL}/myshop"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My shop</a></li>
                         <li><a href="${baseURL}/bill"><i class="fa fa-outdent" aria-hidden="true"></i> Đơn hàng của tôi</a></li>
+                        <li><a href="#"><i class="fa fa-bullseye" aria-hidden="true"></i> Phát trực tiếp</a></li>
                         <li><a href="${baseURL}/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
                     </ul>
                 </div>
@@ -104,6 +105,7 @@
                                         <li><a href="${baseURL}/profile"><i class="fa fa-address-card-o" aria-hidden="true"></i> Info</a></li>
                                         <li><a href="${baseURL}/myshop"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My shop</a></li>
                                         <li><a href="${baseURL}/bill"><i class="fa fa-outdent" aria-hidden="true"></i> Đơn hàng của tôi</a></li>
+                                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i class="fa fa-bullseye" aria-hidden="true"></i> Phát trực tiếp</a></li>
                                         <li><a href="${baseURL}/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
                                     </ul>
                                 </div>
@@ -197,3 +199,27 @@
 
     </div>
 </section>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Điền thông tin livestream của bạn:</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="${baseURL}/live" method="get">
+                <div class="modal-body">
+
+                    <div class="mb-3">
+                        <label for="message-text" class="col-form-label">Content:</label>
+                        <textarea class="form-control" id="content" name="content"></textarea>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Bắt đầu</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

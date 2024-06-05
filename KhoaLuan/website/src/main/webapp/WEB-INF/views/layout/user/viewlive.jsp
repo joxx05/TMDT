@@ -44,7 +44,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <script>
             var username = '${pageContext.request.userPrincipal.name}';
-            var userlive = 'cumy1999@gmail.com';
+            var userlive = '${userlive}';
             const socket = new WebSocket('ws://localhost:8080/website/livestream?islive=false&iduserlive=' + userlive);
 
             // Xử lý khi kết nối được thiết lập
@@ -100,7 +100,7 @@
             });
             function playStream(idVideoTag, stream) {
                 const video = document.getElementById(idVideoTag);
-                video.muted = true;
+                //video.muted = true;
                 video.srcObject = stream;
                 video.onloadedmetadata = function () {
                     // Kiểm tra trạng thái của video trước khi gọi phương thức play

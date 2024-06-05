@@ -43,7 +43,9 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <script>
             var username = '${pageContext.request.userPrincipal.name}';
-            const socket = new WebSocket('ws://localhost:8080/website/livestream?islive=true');
+            var contentLive = '${contentLive}';
+            console.log(contentLive);
+            const socket = new WebSocket('ws://localhost:8080/website/livestream?islive=true&content=' + contentLive);
 
             // Xử lý khi kết nối được thiết lập
             socket.onopen = function (event) {
@@ -82,30 +84,33 @@
                 const config = {audio: true, video: true};
                 return navigator.mediaDevices.getUserMedia(config);
             }
+            function shareScreen() {
+                const config = {audio: true, video: true};
+                return navigator.mediaDevices.getDisplayMedia(config);
+            }
             function playStream(idVideoTag, stream) {
                 const video = document.getElementById(idVideoTag);
                 video.srcObject = stream;
                 video.play();
             }
             const peer = new Peer();
-
+            peer.on('open', (id) => {
+                console.log('peer open'+ id);
+            });
             $(document).ready(function () {
-                openStream().then(stream => {
+                shareScreen().then(stream => {
                     playStream('localStream', stream);
-
-                    peer.on('open', () => {
-                        socket.onmessage = function (event) {
-                            const message = JSON.parse(event.data);
-                            console.log('Received message from server:', message);
-                            if (message.type === 'mess') {
-                                $('.comments').prepend('<p><b>' + message.from + '</b>: ' + message.content + '</p>');
-                            }else if(message.type === 'offer'){
-                                console.log('Received message from server:', message.content);
-                                peer.call(message.content, stream);
-                            }
-                        };
-                        
-                    });
+                    socket.onmessage = function (event) {
+                        const message = JSON.parse(event.data);
+                        console.log('Received message from server:', message);
+                        if (message.type === 'mess') {
+                            $('.comments').prepend('<p><b>' + message.from + '</b>: ' + message.content + '</p>');
+                        } else if (message.type === 'offer') {
+                            console.log('Received message from server:', message.content);
+                            peer.call(message.content, stream);
+                        }
+                    };
+                    
                     //const call = peer.call('797ab602-42b8-4df9-a03a-58057ecf9514', stream);
                     //call.on('stream', remoteStream=>playStream('remoteStream',remoteStream));
                 });
